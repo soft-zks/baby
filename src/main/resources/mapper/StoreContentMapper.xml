@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hubu.baby.mapper.StoreContentMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.hubu.baby.entity.StoreContent">
+		<id column="store_content_id" property="storeContentId" />
+		<result column="store_category_id" property="storeCategoryId" />
+		<result column="store_category_name" property="storeCategoryName"/>
+		<result column="title" property="title" />
+		<result column="url" property="url" />
+		<result column="picture" property="picture" />
+		<result column="price" property="price" />
+		<result column="description" property="description" />
+		<result column="created" property="created" />
+		<result column="updated" property="updated" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        store_content_id AS storeContentId, store_category_id AS storeCategoryId, title, url, picture, price, description, created, updated
+    </sql>
+
+	<select id="listWithLimit" resultMap="BaseResultMap">
+		select * from store_content
+		WHERE store_category_id=#{categoryId}
+		limit #{index},#{size}
+
+	</select>
+
+
+</mapper>
