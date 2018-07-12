@@ -5,7 +5,7 @@ server:
   #ssl:
     #key-store: classpath:springboot.jks
   #密钥库密码
-    #key-store-password: 214621315850577
+    #key-store-password: your password
     #keyStoreType: JKS
     #keyAlias: tomcat
 #solr--商品信息
